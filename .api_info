@@ -1,0 +1,2 @@
+URL = 'https://probe.fbrq.cloud/v1/send/'
+TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTUyOTMzNzUsImlzcyI6ImZhYnJpcXVlIiwibmFtZSI6ImJ5YjBuIn0.YOazMh1bCsKIjPjak2UuKV2pxUOsn7sn3Aak4VgzOrQ'

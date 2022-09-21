@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bash -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_NAME=mailling_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=ty789mhl
+    env_file:
+      - .api_info
